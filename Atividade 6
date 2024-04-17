@@ -1,0 +1,32 @@
+/*Crie uma classe chamada Estudante, essa classe deve conter os atributos: 
+nome, e-mail, RA, curso e uma lista com o nome das disciplinas que o estudante está matriculado. 
+A classe também deve ter dois métodos: primeiraDisciplina e ultimaDisciplina que vão devolver
+ respectivamente a primeira disciplina que o estudante está matriculado e a última.
+
+Para testar, crie dois estudantes de exemplo e imprima os valores na tela.*/
+
+class Estudante {
+    constructor(nome, email, ra, curso, disciplina){
+        this.nome = nome
+        this.email = email
+        this.ra = ra
+        this.curso = curso
+        this.disciplina = disciplina
+    }
+    primeiraDisciplina(){
+        return this.disciplina[0]
+    }
+    ultimaDisciplina(){
+        return this.disciplina[this.disciplina.length-1]
+    }
+    meApresentar(){
+        console.log(`Olá sou ${this.nome}! meu email é: ${this.email}, meu ra: ${this.ra}, e curso: ${this.curso}, as disciplinas que estou matriculado são: ${this.disciplina}.`)
+    }
+}
+const estudante1 = new Estudante ("Maria", "maria@fatec.com", 1234.5678, "Gestão Empresarial", ["Contabilidade", "Direito Empresarial", "Administração", "Conflitos Internacionais"])
+const estudante2 = new Estudante ("José", "jose@fatec.com", 3214.5698, "Análise e Desenvolvimento de Sistema", ["Linguagens", "Excel", "Sistemas", "PI"])
+estudante1.meApresentar()
+estudante2.meApresentar()
+
+console.log(estudante1.primeiraDisciplina(), estudante1.ultimaDisciplina())
+console.log(estudante2.primeiraDisciplina(), estudante2.ultimaDisciplina())
